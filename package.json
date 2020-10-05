@@ -1,0 +1,28 @@
+{
+  "name": "js-auth",
+  "version": "1.0.0",
+  "description": "Follwing the tutorial at https://www.youtube.com/watch?v=2jqok-WgelI&list=PLDyQo7g0_nsUIbQhYNVlM0u7kb-6ou4MQ&index=1&t=20s",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FChappuis452/node-js-auth.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FChappuis452/node-js-auth/issues"
+  },
+  "homepage": "https://github.com/FChappuis452/node-js-auth#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
