@@ -1,23 +1,25 @@
-require('dotenv').config();
+const dotenv = require('dotenv');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 
-//Connect to Db
-const user = process.env.DB_USER;
-const password = process.env.DB_PASSWORD;
-const db_name = process.env.DB_NAME;
+//Import routes
+const authRoute = require('./routes/auth');
 
+dotenv.config();
+//Connect to Db
 mongoose.connect(
-    `mongodb+srv://${user}:${password}>@cluster0.l5299.mongodb.net/${db_name}?retryWrites=true&w=majority`,
-    { useNewUrlParser: true,
-      useUnifiedTopology: true
+    process.env.DB_CONNECT,
+    { 
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
     },
     () => console.log('Connected to Db')
 )
 
-//Import routes
-const authRoute = require('./routes/auth');
+//Middleware
+app.use(express.json());
+
 
 //Route Middlewares
 app.use('/api/user', authRoute);
