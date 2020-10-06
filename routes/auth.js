@@ -52,7 +52,7 @@ router.post('/login', async (request, respond)  => {
         
         //Create and assign jwt token
         const token = jwt.sign({_id: user._id},process.env.TOKEN_SECRET);
-        respond.header('auth-token', token).send(token);
+        respond.header('auth-token', token).send("Token generated");
 
     }catch(err){
         respond.status(400).send(err);
